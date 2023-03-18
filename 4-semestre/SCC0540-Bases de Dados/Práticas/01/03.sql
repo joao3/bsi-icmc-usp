@@ -1,0 +1,9 @@
+ALTER TABLE jogador ADD endereco varchar2(30);
+ALTER TABLE jogador ADD nro_lesoes number default 0;
+
+ALTER TABLE jogador ADD CONSTRAINT ck_nome CHECK(nome = 'RONY');
+ALTER TABLE jogador ADD CONSTRAINT ck_nome CHECK(nome = 'RONY') ENABLE novalidate;
+INSERT INTO jogador VALUES ('400.560.238-61', '20002013', 'sda', TO_DATE('2003/10/03', 'YYYY/MM/DD'), 'SAO PAULO', 'VASCO');
+INSERT INTO jogador VALUES ('400.560.238-61', '20032013', 'RONY', TO_DATE('2003/10/03', 'YYYY/MM/DD'), 'SAO PAULO', 'VASCO');
+
+ALTER TABLE jogador DROP COLUMN cpf CASCADE CONSTRAINTS;

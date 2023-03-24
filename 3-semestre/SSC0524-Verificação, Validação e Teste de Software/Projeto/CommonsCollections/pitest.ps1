@@ -1,1 +1,0 @@
-./gradlew clean test pitest && Move-Item -Path .\build\reports\pitest\* -Destination .\build\reports\pitest\latest

@@ -1,0 +1,18 @@
+DROP TABLE IF EXISTS COUNTRIESV2;
+
+
+CREATE TABLE COUNTRIESV2 AS
+SELECT *
+FROM COUNTRIES;
+
+
+DELETE
+FROM COUNTRIESV2
+WHERE CODE NOT IN
+		(SELECT A.ISOCOUNTRY AS CODE
+			FROM COUNTRIESV2 C
+			JOIN AIRPORTS A ON C.CODE = A.ISOCOUNTRY
+			GROUP BY A.ISOCOUNTRY
+			HAVING COUNT(A.ISOCOUNTRY) < 10);
+
+-- Clona a tabela countries -> acha os códigos dos países com menos de 10 aeroportos -> deleta os países que não tem menos de 10 aeroportos.

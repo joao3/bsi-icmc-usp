@@ -1,0 +1,1 @@
+adicionaH(L, X, [X|L]).

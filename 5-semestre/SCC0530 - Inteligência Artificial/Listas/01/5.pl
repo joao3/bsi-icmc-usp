@@ -1,0 +1,1 @@
+contido(X, [H|T]) :- X = H; contido(X, T).
